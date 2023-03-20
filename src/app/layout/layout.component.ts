@@ -7,9 +7,9 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterModule],
   template: `
-    <p>
-      layout works!
-    </p>
+    <h1 class="text-3xl font-bold underline">
+      Hello world!
+    </h1>
     <router-outlet></router-outlet>
   `,
   styles: [
