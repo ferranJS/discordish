@@ -1,19 +1,21 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { SideBarComponent } from "./side-bar/side-bar.component";
 
 @Component({
-  selector: 'app-layout',
-  standalone: true,
-  imports: [CommonModule, RouterModule],
-  template: `
-    <h1 class="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-    <router-outlet></router-outlet>
-  `,
-  styles: [
-  ]
+    selector: 'layout',
+    standalone: true,
+    template: `
+    <div class="bg-zinc-700 h-screen">
+      <side-bar/>
+      <!-- <h1 class="text-3xl font-bold underline">
+        Hello world!
+      </h1> -->
+      <router-outlet></router-outlet>
+    </div>
+    `,
+    imports: [CommonModule, RouterModule, SideBarComponent]
 })
 export class LayoutComponent {
 
