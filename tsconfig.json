@@ -6,6 +6,9 @@
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "noEmitOnError": false, // this doesn't work because of angular configs! maybe needs tslint!
+    "noEmit": false, // this doesn't work because of angular configs!
+    "strictPropertyInitialization": false,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
