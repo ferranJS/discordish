@@ -9,9 +9,6 @@ import { SideBarComponent } from './side-bar/side-bar.component'
    template: `
       <div class="h-screen bg-zinc-700">
          <side-bar />
-         <!-- <h1 class="text-3xl font-bold underline">
-         Hello world!
-      </h1> -->
          <router-outlet></router-outlet>
       </div>
    `,
