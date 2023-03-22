@@ -7,7 +7,7 @@ import { SideBarComponent } from './side-bar/side-bar.component'
    selector: 'layout',
    standalone: true,
    template: `
-      <div class="h-screen bg-zinc-700">
+      <div class="h-screen w-screen bg-zinc-700">
          <side-bar />
          <router-outlet></router-outlet>
       </div>

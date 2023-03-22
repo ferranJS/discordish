@@ -7,13 +7,12 @@ import { ToolTipComponent } from './tool-tip.component'
    selector: 'side-bar-button',
    standalone: true,
    template: `
-      <!--//todo (and gotta separate button from toolttip and left white strip!) -->
       <button class="group relative flex h-12 w-12 items-center text-sm font-medium">
          <div
             class="flex h-full w-full items-center justify-center rounded-3xl bg-zinc-700 bg-cover"
             [ngClass]="{
                'text-green-600 group-hover:bg-green-600 group-hover:text-zinc-200': color == 'green',
-               'text-zinc-200 group-hover:bg-indigo-500': color == 'blue',
+               'group-hover:bg-indigo-500': color == 'blue',
                'group-focus:bg-green-600 group-focus:text-zinc-200': selectable && color == 'green',
                'group-focus:bg-indigo-500': selectable && color == 'blue',
                'group-focus:rounded-2xl': selectable,

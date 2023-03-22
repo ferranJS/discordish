@@ -6,7 +6,11 @@ import { Server } from 'src/app/shared/interfaces'
    selector: 'side-bar',
    standalone: true,
    template: `
-      <div class="fixed top-0 left-0 m-0 flex h-screen flex-col gap-2 bg-zinc-800 p-3 pb-2 pt-2">
+      <div
+         class="fixed left-0 flex h-full flex-col items-center gap-2 bg-zinc-800 p-3 pb-2 pt-2 text-zinc-200 scrollbar-hide"
+      >
+         <!--//todo overflow-x-hidden overflow-y-auto  -->
+         <p class="text-xs font-bold text-zinc-400">Discord</p>
          <side-bar-button
             [iconClass]="'fa-brands fa-discord h-7 w-7'"
             [textName]="'Mensajes directos'"
@@ -34,6 +38,34 @@ export class SideBarComponent {
       },
       {
          name: 'El servidor más Wapo!',
+         image: '',
+      },
+      {
+         name: 'El servidor de ferrran junio asdfasdf asdf asdf asdfasd fasdf asdf',
+         image: '',
+      },
+      {
+         name: 'El servidor de ferrran junio asdfasdf asdf asdf asdfasd fasdf asdf',
+         image: '',
+      },
+      {
+         name: 'El servidor de ferrran junio asdfasdf asdf asdf asdfasd fasdf asdf',
+         image: '',
+      },
+      {
+         name: 'El servidor de ferrran junio asdfasdf asdf asdf asdfasd fasdf asdf',
+         image: '',
+      },
+      {
+         name: 'El servidor de ferrran junio asdfasdf asdf asdf asdfasd fasdf asdf',
+         image: '',
+      },
+      {
+         name: 'El servidor de ferrran junio asdfasdf asdf asdf asdfasd fasdf asdf',
+         image: '',
+      },
+      {
+         name: 'El servidor de ferrran junio asdfasdf asdf asdf asdfasd fasdf asdf',
          image: '',
       },
       {
