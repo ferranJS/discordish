@@ -2,8 +2,10 @@ import { Component, Input } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { Server } from 'src/app/shared/interfaces'
 import { ToolTipComponent } from './tool-tip.component'
+import { ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
+   changeDetection: ChangeDetectionStrategy.OnPush,
    selector: 'side-bar-button',
    standalone: true,
    template: `

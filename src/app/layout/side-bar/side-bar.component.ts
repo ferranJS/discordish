@@ -1,10 +1,11 @@
-import { Component } from '@angular/core'
+import { ChangeDetectionStrategy, Component } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { SideBarButtonComponent } from './side-bar-button.component'
 import { Server } from 'src/app/shared/interfaces'
 @Component({
    selector: 'side-bar',
    standalone: true,
+   changeDetection: ChangeDetectionStrategy.OnPush,
    template: `
       <div
          class="fixed left-0 flex h-full flex-col items-center gap-2 bg-zinc-800 p-3 pb-2 pt-2 text-zinc-200 scrollbar-hide"

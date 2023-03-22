@@ -1,10 +1,11 @@
-import { Component, Input } from '@angular/core'
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core'
 import { CommonModule } from '@angular/common'
 
 @Component({
    selector: 'tool-tip',
    standalone: true,
    imports: [CommonModule],
+   changeDetection: ChangeDetectionStrategy.OnPush,
    template: `
       <!--//? https://css-tricks.com/line-clampin/ -->
       <!-- before used -->

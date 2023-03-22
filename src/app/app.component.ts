@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { ChangeDetectionStrategy, Component } from '@angular/core'
 import { RouterModule } from '@angular/router'
 
 @Component({
@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router'
    imports: [RouterModule],
    template: `<router-outlet></router-outlet>`,
    styles: [],
+   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
    title = 'discordish'
