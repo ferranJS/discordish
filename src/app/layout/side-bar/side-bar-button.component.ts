@@ -7,25 +7,29 @@ import { ToolTipComponent } from './tool-tip.component'
    selector: 'side-bar-button',
    standalone: true,
    template: `
-      <button
-         class="group relative flex h-12 w-12 items-center justify-center rounded-3xl bg-zinc-700 bg-cover text-center text-sm font-medium transition-all duration-200 hover:rounded-2xl"
-         [ngClass]="{
-            'text-green-600 hover:bg-green-600 hover:text-zinc-200': color == 'green',
-            'focus:bg-green-600 focus:text-zinc-200': selectable && color == 'green',
-            'text-zinc-200 hover:bg-indigo-500 focus:bg-indigo-500': color == 'blue',
-            'focus:bg-indigo-500': selectable && color == 'blue',
-            'focus:rounded-2xl': selectable
-         }"
-         [style.background-image]="server?.image ? 'url(' + server?.image + ')' : ''"
-      >
-         <i *ngIf="iconClass"  class="h-5 w-5"[class]="iconClass"></i>
-         <p *ngIf="server && !server.image" class="overflow-hidden p-px text-xs">
-            {{ initialsFromName(server.name) }}
-         </p>
+      <!--//todo (and gotta separate button from toolttip and left white strip!) -->
+      <button class="group relative flex h-12 w-12 items-center text-sm font-medium">
+         <div
+            class="flex h-full w-full items-center justify-center rounded-3xl bg-zinc-700 bg-cover"
+            [ngClass]="{
+               'text-green-600 group-hover:bg-green-600 group-hover:text-zinc-200': color == 'green',
+               'text-zinc-200 group-hover:bg-indigo-500': color == 'blue',
+               'group-focus:bg-green-600 group-focus:text-zinc-200': selectable && color == 'green',
+               'group-focus:bg-indigo-500': selectable && color == 'blue',
+               'group-focus:rounded-2xl': selectable,
+               'transition-all duration-200 hover:rounded-2xl active:translate-y-px': true
+            }"
+            [style.background-image]="server?.image ? 'url(' + server?.image + ')' : ''"
+         >
+            <i *ngIf="iconClass" class="h-5 w-5" [class]="iconClass"></i>
+            <p *ngIf="server && !server.image" class="overflow-hidden p-px text-xs">
+               {{ initialsFromName(server.name) }}
+            </p>
+         </div>
 
          <div
             *ngIf="selectable"
-            class="absolute -left-3 h-5 w-1 scale-0 rounded-r-xl bg-white transition-all duration-200 group-hover:scale-100 group-focus:scale-100 group-focus:h-10"
+            class="absolute -left-3 h-5 w-1 scale-0 rounded-r-xl bg-white transition-all duration-200 group-hover:scale-100 group-focus:h-10 group-focus:scale-100"
          ></div>
          <tool-tip [text]="(textName || this.server?.name)!" />
       </button>

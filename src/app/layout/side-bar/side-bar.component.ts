@@ -30,7 +30,7 @@ export class SideBarComponent {
    servers: Server[] = [
       {
          name: 'tbu',
-         image: '/assets/images/tbu_wench.PNG',
+         image: '/assets/images/tbu_wench.png',
       },
       {
          name: 'El servidor más Wapo!',
