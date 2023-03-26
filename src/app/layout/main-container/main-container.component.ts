@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
    standalone: true,
    imports: [CommonModule, RouterModule],
    template: `
+      <router-outlet></router-outlet>
    `,
    styles: [':host { @apply w-full h-full }'],
    changeDetection: ChangeDetectionStrategy.OnPush
