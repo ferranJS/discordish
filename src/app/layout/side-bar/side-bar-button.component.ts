@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { Server } from 'src/app/shared/interfaces'
 import { ToolTipComponent } from './tool-tip.component'
-import { ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy } from '@angular/core'
 
 @Component({
    changeDetection: ChangeDetectionStrategy.OnPush,
@@ -11,14 +11,13 @@ import { ChangeDetectionStrategy } from '@angular/core';
    template: `
       <button class="group relative flex h-12 w-12 items-center text-sm font-medium">
          <div
-            class="flex h-full w-full items-center justify-center rounded-3xl bg-zinc-700 bg-cover"
+            class="flex h-full w-full items-center justify-center rounded-3xl bg-zinc-700 bg-cover transition-all duration-200 hover:rounded-2xl active:translate-y-px"
             [ngClass]="{
                'text-green-600 group-hover:bg-green-600 group-hover:text-zinc-200': color == 'green',
                'group-hover:bg-indigo-500': color == 'blue',
                'group-focus:bg-green-600 group-focus:text-zinc-200': selectable && color == 'green',
                'group-focus:bg-indigo-500': selectable && color == 'blue',
-               'group-focus:rounded-2xl': selectable,
-               'transition-all duration-200 hover:rounded-2xl active:translate-y-px': true
+               'group-focus:rounded-2xl': selectable
             }"
             [style.background-image]="server?.image ? 'url(' + server?.image + ')' : ''"
          >

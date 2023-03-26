@@ -7,9 +7,6 @@ import { CommonModule } from '@angular/common'
    imports: [CommonModule],
    changeDetection: ChangeDetectionStrategy.OnPush,
    template: `
-      <!--//? https://css-tricks.com/line-clampin/ -->
-      <!-- before used -->
-      <!-- style="display:-webkit-box;-webkit-line-clamp:var(--line-clamp,2);-webkit-box-orient:vertical;overflow:hidden" -->
       <p class="line-clamp-2">
          {{ text }}
       </p>
@@ -20,7 +17,7 @@ import { CommonModule } from '@angular/common'
    `,
    // tailwind classes applied to the tool-tip component itself
    styles: [
-      ':host { @apply absolute left-[4.5rem] top-0 max-h-16 w-max max-w-[190px] scale-0 rounded-md bg-zinc-900 p-3 text-start group-hover:scale-100 }',
+      ':host { @apply absolute left-[4.5rem] max-h-16 w-max max-w-[190px] scale-0 rounded-md bg-zinc-900 p-3 text-start group-hover:scale-100 z-20 }',
    ], // z-10 block ?
 })
 export class ToolTipComponent {
