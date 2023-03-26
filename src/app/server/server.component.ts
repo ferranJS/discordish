@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ServerSidebarComponent } from "./server-sidebar.component";
-import { ServerContentComponent } from "./server-content.component";
-import { RouterModule } from '@angular/router';
+import { Component } from '@angular/core'
+import { CommonModule } from '@angular/common'
+import { ServerMainSidebarComponent } from './server-sidebar.component'
+import { ServerContentComponent } from './server-content.component'
+import { RouterModule } from '@angular/router'
 
 @Component({
    selector: 'app-server',
@@ -10,11 +10,8 @@ import { RouterModule } from '@angular/router';
    template: `
       <server-sidebar />
       <server-content />
-
    `,
    styles: [],
-   imports: [CommonModule, ServerSidebarComponent, ServerContentComponent, RouterModule]
+   imports: [CommonModule, ServerMainSidebarComponent, ServerContentComponent, RouterModule],
 })
-export class ServerComponent {
-
-}
+export class ServerComponent {}

@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { DirectMessagesSidebarComponent } from "./direct-messages-sidebar.component";
-import { DirectMessagesContentComponent } from "./direct-messages-content.component";
+import { Component } from '@angular/core'
+import { CommonModule } from '@angular/common'
+import { DirectMessagesMainSidebarComponent } from './direct-messages-sidebar.component'
+import { DirectMessagesContentComponent } from './direct-messages-content.component'
 
 @Component({
    selector: 'direct-messages',
@@ -11,8 +11,6 @@ import { DirectMessagesContentComponent } from "./direct-messages-content.compon
       <direct-messages-content />
    `,
    styles: [],
-   imports: [CommonModule, DirectMessagesSidebarComponent, DirectMessagesContentComponent]
+   imports: [CommonModule, DirectMessagesMainSidebarComponent, DirectMessagesContentComponent],
 })
-export class DirectMessagesComponent {
-
-}
+export class DirectMessagesComponent {}

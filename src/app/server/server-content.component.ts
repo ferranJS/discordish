@@ -1,18 +1,11 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core'
+import { CommonModule } from '@angular/common'
 
 @Component({
-  selector: 'server-content',
-  standalone: true,
-  imports: [CommonModule],
-  template: `
-    <p>
-      server-content works!
-    </p>
-  `,
-  styles: [
-  ]
+   selector: 'server-content',
+   standalone: true,
+   imports: [CommonModule],
+   template: ` <p>server-content works!</p> `,
+   styles: [],
 })
-export class ServerContentComponent {
-
-}
+export class ServerContentComponent {}

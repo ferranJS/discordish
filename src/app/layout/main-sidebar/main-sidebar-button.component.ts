@@ -6,7 +6,7 @@ import { ChangeDetectionStrategy } from '@angular/core'
 
 @Component({
    changeDetection: ChangeDetectionStrategy.OnPush,
-   selector: 'side-bar-button',
+   selector: 'main-sidebar-button',
    standalone: true,
    template: `
       <button class="group relative flex h-12 w-12 items-center text-sm font-medium">
@@ -36,7 +36,7 @@ import { ChangeDetectionStrategy } from '@angular/core'
    `,
    imports: [CommonModule, ToolTipComponent],
 })
-export class SideBarButtonComponent {
+export class MainSidebarButtonComponent {
    @Input() iconClass?: string
    @Input() server?: Server
    @Input() textName?: string
