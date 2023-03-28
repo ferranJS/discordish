@@ -10,7 +10,7 @@ import { DirectMessagesContentComponent } from './direct-messages-content.compon
       <direct-messages-sidebar />
       <direct-messages-content />
    `,
-   styles: [],
+   styles: [':host { @apply w-full h-full flex flex-row justify-start  }'],
    imports: [CommonModule, DirectMessagesMainSidebarComponent, DirectMessagesContentComponent],
 })
 export class DirectMessagesComponent {}

@@ -7,7 +7,7 @@ import { Server } from 'src/app/shared/interfaces'
    standalone: true,
    changeDetection: ChangeDetectionStrategy.OnPush,
    template: `
-      <p class="text-xs font-bold text-zinc-400">Discord</p>
+      <!-- <p class="text-xs font-bold text-zinc-400">Discrod</p> -->
       <main-sidebar-button
          [iconClass]="'fa-brands fa-discord h-7 w-7'"
          [textName]="'Mensajes directos'"
@@ -26,7 +26,7 @@ import { Server } from 'src/app/shared/interfaces'
    `,
    // ':host::-webkit-scrollbar { display: none; } '
    //todo should be able to scroll but it hides tooltips (overflow-scroll scrollbar-hide)
-   styles: [':host { @apply flex h-full flex-col items-center gap-2 bg-zinc-800 p-3 pb-2 pt-2 }'],
+   styles: [':host { @apply flex h-full flex-col items-center gap-2 bg-zinc-800 p-3 }'],
    imports: [CommonModule, MainSidebarButtonComponent],
 })
 export class MainSidebarComponent {
