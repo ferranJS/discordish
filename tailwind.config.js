@@ -5,7 +5,13 @@ module.exports = {
       "./src/**/*.{html,ts}",
    ],
    theme: {
-      extend: {},
+      extend: {
+         colors: {
+            zinc: {
+               850: 'rgb(50, 50, 50)'
+            }
+         }
+      },
    },
    plugins: [
       require('@tailwindcss/line-clamp'),

@@ -17,7 +17,7 @@ import { CommonModule } from '@angular/common'
    `,
    // tailwind classes applied to the tool-tip component itself
    styles: [
-      ':host { @apply absolute left-[4.5rem] max-h-16 w-max max-w-[190px] scale-0 rounded-md bg-zinc-900 p-3 text-start group-hover:scale-100 transition-all duration-[0.05s] z-20 }',
+      ':host { @apply absolute left-[4.5rem] max-h-16 w-max max-w-[190px] scale-0 rounded-md bg-zinc-900 p-3 text-start group-hover:scale-100 transition-all duration-[0.05s] z-40 }',
    ], // z-10 block ?
 })
 export class ToolTipComponent {
