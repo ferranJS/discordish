@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { RouterModule } from '@angular/router'
 import { MainContainerComponent } from './main-container.component'
-import { MainSidebarComponent } from './main-sidebar/main-sidebar.component';
+import { MainSidebarComponent } from './main-sidebar/main-sidebar.component'
 
 @Component({
    selector: 'layout',
