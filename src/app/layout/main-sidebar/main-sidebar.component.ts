@@ -29,7 +29,7 @@ import { RouterModule } from '@angular/router'
    `,
    // ':host::-webkit-scrollbar { display: none; } '
    //todo should be able to scroll but it hides tooltips (overflow-scroll scrollbar-hide)
-   styles: [':host { @apply flex h-full flex-col items-center gap-2 bg-zinc-800 p-3 }'],
+   styles: [':host { @apply flex h-full flex-col flex-shrink-0 items-center gap-2 bg-zinc-800 p-3 }'],
    imports: [CommonModule, MainSidebarButtonComponent, RouterModule],
 })
 export class MainSidebarComponent {

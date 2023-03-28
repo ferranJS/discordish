@@ -7,6 +7,6 @@ import { RouterModule } from '@angular/router'
    standalone: true,
    imports: [CommonModule, RouterModule],
    template: ` <router-outlet></router-outlet> `,
-   styles: [],
+   styles: [':host { @apply w-full}'],
 })
 export class DirectMessagesContentComponent {}

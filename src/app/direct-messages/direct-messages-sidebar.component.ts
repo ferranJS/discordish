@@ -49,7 +49,7 @@ import { User } from '../shared/interfaces';
 
       <user-status-area />
    `,
-   styles: [':host { @apply overflow-auto w-60 scrollbar-hide relative text-zinc-400 font-medium text-base bg-zinc-850}'],
+   styles: [':host { @apply overflow-auto flex-shrink-0 w-60 scrollbar-hide relative text-zinc-400 font-medium text-base bg-zinc-850 }'],
    imports: [CommonModule, UserStatusAreaComponent, RouterModule, UserAvatarComponent],
 })
 export class DirectMessagesMainSidebarComponent {
