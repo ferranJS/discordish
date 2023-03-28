@@ -15,11 +15,9 @@ import { RouterModule } from '@angular/router'
             class="flex h-full w-full items-center justify-center rounded-3xl bg-zinc-700 bg-cover transition-all duration-200 hover:rounded-2xl active:translate-y-px"
             [ngClass]="{
                'text-green-600 group-hover:bg-green-600 group-hover:text-zinc-200': color == 'green',
-               'group-hover:bg-indigo-500': color == 'blue',
-               'group-focus:bg-green-600 group-focus:text-zinc-200': selectable && color == 'green',
-               'group-focus:bg-indigo-500': selectable && color == 'blue',
-               'group-focus:rounded-2xl': selectable
+               'group-hover:bg-indigo-500': color == 'blue'
             }"
+            [routerLinkActive]="'rounded-2xl' + (color == 'green' ? ' bg-green-600 text-zinc-200'  : ' bg-indigo-500')"
             [style.background-image]="server?.image ? 'url(' + server?.image + ')' : ''"
          >
             <i *ngIf="iconClass" class="h-5 w-5" [class]="iconClass"></i>
@@ -30,7 +28,8 @@ import { RouterModule } from '@angular/router'
 
          <div
             *ngIf="selectable"
-            class="absolute -left-3 h-5 w-1 scale-0 rounded-r-xl bg-white transition-all duration-200 group-hover:scale-100 group-focus:h-10 group-focus:scale-100"
+            class="absolute -left-3 h-5 w-1 scale-0 rounded-r-xl bg-white transition-all duration-200 group-hover:scale-100"
+            routerLinkActive="h-10 scale-100"
          ></div>
          <tool-tip [text]="(textName || this.server?.name)!" />
       </button>

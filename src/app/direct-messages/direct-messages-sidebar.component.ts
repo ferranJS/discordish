@@ -17,25 +17,29 @@ import { User } from '../shared/interfaces';
 
       <div class="mt-12 flex flex-col gap-px p-2">
          <button
-            class="focus-within:bg-text-200 flex h-11 content-center items-center gap-4 rounded-md p-5 focus-within:bg-zinc-600 focus-within:text-zinc-200 hover:bg-zinc-700 hover:text-zinc-300 active:bg-zinc-600 active:text-zinc-200"
+            routerLinkActive="bg-text-200 bg-zinc-600 text-zinc-200"
+            [routerLinkActiveOptions]="{exact: true}"
+            class="flex h-11 content-center items-center gap-4 rounded-md p-5 hover:bg-zinc-700 hover:text-zinc-300 active:bg-zinc-600 active:text-zinc-200"
             routerLink="/channels/@me"
          >
             <i class="fa-solid fa-user h-4 w-4 rounded-full"></i>
             Amigos
          </button>
          <button
-            class="focus-within:bg-text-200 flex h-11 content-center items-center gap-4 rounded-md p-5 focus-within:bg-zinc-600 focus-within:text-zinc-200 hover:bg-zinc-700 hover:text-zinc-300 active:bg-zinc-600 active:text-zinc-200"
+            routerLinkActive="bg-text-200 bg-zinc-600 text-zinc-200"
+            class="flex h-11 content-center items-center gap-4 rounded-md p-5 hover:bg-zinc-700 hover:text-zinc-300 active:bg-zinc-600 active:text-zinc-200"
             routerLink="/shop"
          >
             <i class="fa-solid fa-truck-fast h-4 w-4 rounded-full"></i>
             Nitro
          </button>
-         <div class="flex flex-row justify-between p-3 pt-4 pb-1 text-xs font-medium hover:text-zinc-300">
+         <label class="flex flex-row justify-between p-3 pt-4 pb-1 text-xs font-medium hover:text-zinc-300">
             MENSAJES DIRECTOS
             <button class="text-zinc-400 hover:text-zinc-200"><i class="fa solid fa-plus h-3 w-3"></i></button>
-         </div>
+         </label>
          <button
-            class="focus-within:bg-text-200 group flex h-11 w-full items-center justify-start gap-3 rounded-md p-2 text-justify focus-within:bg-zinc-600 focus-within:text-zinc-200 hover:bg-zinc-700 hover:text-zinc-300 active:bg-zinc-600 active:text-zinc-200"
+            routerLinkActive="bg-text-200 bg-zinc-600 text-zinc-200"
+            class="group flex h-11 w-full items-center justify-start gap-3 rounded-md p-2 text-justify hover:bg-zinc-700 hover:text-zinc-300 active:bg-zinc-600 active:text-zinc-200"
             *ngFor="let user of users"
             [routerLink]="'/channels/@me/' + user.id"
          >

@@ -25,6 +25,7 @@ import { RouterModule } from '@angular/router'
          color="green"
          click=""
          [selectable]="true"
+         link="explorar-servidores"
       />
    `,
    // ':host::-webkit-scrollbar { display: none; } '
