@@ -1,36 +1,61 @@
-import { Route } from "@angular/router";
-import { DirectMessagesComponent } from "src/app/direct-messages/direct-messages.component";
-import { ServerComponent } from "../server/server.component";
+import { Route } from '@angular/router'
+import { DirectMessagesComponent } from 'src/app/direct-messages/direct-messages.component'
+import { FriendsComponent } from '../direct-messages/friends/friends.component'
+import { ServerComponent } from '../server/server.component'
+import { ChatComponent } from '../shared/chat/chat.component'
 
-export const routes: Route[] = [
+export const layoutRoutes: Route[] = [
    {
-      path: "",
-      redirectTo: "@me",
-      pathMatch: "full",
+      path: '',
+      redirectTo: '@me',
+      pathMatch: 'full',
    },
    {
-      path: "@me",
-      loadComponent: () => DirectMessagesComponent,
+      path: '@me',
+      loadChildren: () => directMessagesRoutes,
    },
    {
-      path: "@me/:chatId",
-      loadComponent: () => DirectMessagesComponent,
+      path: ':serverId',
+      loadChildren: () => serverRoutes,
    },
+]
+
+export const serverRoutes: Route[] = [
    {
-      path: ":serverId",
+      path: '',
       loadComponent: () => ServerComponent,
+      loadChildren: () => [
+         {
+            path: ':channelId',
+            loadComponent: () => ServerComponent,
+         },
+      ],
    },
+]
+
+export const directMessagesRoutes: Route[] = [
    {
-      path: ":serverId/:channelId",
-      loadComponent: () => ServerComponent,
+      path: '',
+      loadComponent: () => DirectMessagesComponent,
+      loadChildren: () => [
+         {
+            path: '',
+            loadComponent: () => FriendsComponent,
+         },
+         {
+            path: ':chatId',
+            loadComponent: () => ChatComponent,
+         },
+      ],
    },
-   //! aproach with children does not work lol
-   // children: [
-   //    {
-   //       path: ":channelId",
-   //       //? https://www.telerik.com/blogs/angular-14-introducing-standalone-components
-   //       //? https://ultimatecourses.com/blog/lazy-load-standalone-components-via-load-component
-   //       loadChildren: () => ADMIN_ROUTES,
-   //    },
-   // ]
-];
+]
+
+//! aproach with children does not work lol
+// children: [
+//    {
+//       path: ":channelId",
+//       //? https://www.telerik.com/blogs/angular-14-introducing-standalone-components
+//       //? https://ultimatecourses.com/blog/lazy-load-standalone-components-via-load-component
+//       loadChildren: () => ADMIN_ROUTES,
+//    },
+// ]

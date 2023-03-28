@@ -1,4 +1,5 @@
 export interface Server {
-    name: string;
-    image: string;
+   id: string
+   name: string
+   image?: string
 }

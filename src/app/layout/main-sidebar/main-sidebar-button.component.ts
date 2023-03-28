@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common'
 import { Server } from 'src/app/shared/interfaces'
 import { ToolTipComponent } from './tool-tip.component'
 import { ChangeDetectionStrategy } from '@angular/core'
+import { RouterModule } from '@angular/router'
 
 @Component({
    changeDetection: ChangeDetectionStrategy.OnPush,
    selector: 'main-sidebar-button',
    standalone: true,
    template: `
-      <button class="group relative flex h-12 w-12 items-center text-sm font-medium">
+      <button class="group relative flex h-12 w-12 items-center text-sm font-medium" [routerLink]="link || server?.id">
          <div
             class="flex h-full w-full items-center justify-center rounded-3xl bg-zinc-700 bg-cover transition-all duration-200 hover:rounded-2xl active:translate-y-px"
             [ngClass]="{
@@ -34,7 +35,7 @@ import { ChangeDetectionStrategy } from '@angular/core'
          <tool-tip [text]="(textName || this.server?.name)!" />
       </button>
    `,
-   imports: [CommonModule, ToolTipComponent],
+   imports: [CommonModule, ToolTipComponent, RouterModule],
 })
 export class MainSidebarButtonComponent {
    @Input() iconClass?: string
@@ -42,6 +43,7 @@ export class MainSidebarButtonComponent {
    @Input() textName?: string
    @Input() selectable?: boolean
    @Input() color?: 'green' | 'blue'
+   @Input() link?: string
 
    ngOnInit(): void {
       this.selectable = this.selectable ?? !!this.server
