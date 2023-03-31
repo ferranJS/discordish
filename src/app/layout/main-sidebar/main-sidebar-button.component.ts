@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { Server } from 'src/app/shared/interfaces'
-import { ToolTipComponent } from './tool-tip.component'
+import { ToolTipComponent } from '../../shared/tool-tip.component'
 import { ChangeDetectionStrategy } from '@angular/core'
 import { RouterModule } from '@angular/router'
 
@@ -17,7 +17,7 @@ import { RouterModule } from '@angular/router'
                'text-green-600 group-hover:bg-green-600 group-hover:text-zinc-200': color == 'green',
                'group-hover:bg-indigo-500': color == 'blue'
             }"
-            [routerLinkActive]="'rounded-2xl' + (color == 'green' ? ' bg-green-600 text-zinc-200'  : ' bg-indigo-500')"
+            [routerLinkActive]="'rounded-2xl' + (color == 'green' ? ' bg-green-600 text-zinc-200' : ' bg-indigo-500')"
             [style.background-image]="server?.image ? 'url(' + server?.image + ')' : ''"
          >
             <i *ngIf="iconClass" class="h-5 w-5" [class]="iconClass"></i>

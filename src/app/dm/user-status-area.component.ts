@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { User, UserStatus } from '../shared/interfaces';
+import { User, UserStatus } from '../shared/interfaces'
 
 @Component({
    selector: 'user-status-area',
@@ -18,14 +18,10 @@ import { User, UserStatus } from '../shared/interfaces';
                <div *ngSwitchCase="'Online'" class="h-2.5 w-2.5 rounded-full bg-green-600"></div>
                <div *ngSwitchCase="'Away'" class="relative h-2.5 w-2.5 rounded-full bg-yellow-500"></div>
                <div *ngSwitchCase="'Do not disturb'" class="flex h-2.5 w-2.5 items-center justify-center rounded-full bg-red-600">
-                  <div
-                     class="h-0.5 w-1.5 rounded-full bg-zinc-850 group-hover:bg-zinc-700"
-                  ></div>
+                  <div class="h-0.5 w-1.5 rounded-full bg-zinc-850 group-hover:bg-zinc-700"></div>
                </div>
                <div *ngSwitchCase="'Invisible'" class="flex h-2.5 w-2.5 items-center justify-center rounded-full bg-zinc-500">
-                  <div
-                     class="h-1 w-1 rounded-full bg-zinc-850 group-hover:bg-zinc-700"
-                  ></div>
+                  <div class="h-1 w-1 rounded-full bg-zinc-850 group-hover:bg-zinc-700"></div>
                </div>
             </div>
          </div>
@@ -49,5 +45,5 @@ import { User, UserStatus } from '../shared/interfaces';
    styles: [':host {@apply flex justify-between fixed gap-2 w-60 h-14 items-center p-1 shadow bottom-0 bg-zinc-800}'],
 })
 export class UserStatusAreaComponent {
-   user: User = {name: 'asdfas', status: 'Invisible', id: '2fa34as233a'};
+   user: User = { name: 'asdfas', status: 'Invisible', id: '2fa34as233a' }
 }

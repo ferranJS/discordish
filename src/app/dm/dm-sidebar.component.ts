@@ -2,11 +2,11 @@ import { Component } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { UserStatusAreaComponent } from './user-status-area.component'
 import { RouterModule } from '@angular/router'
-import { UserAvatarComponent } from '../shared/user-avatar/user-avatar.component'
-import { User } from '../shared/interfaces';
+import { UserAvatarComponent } from '../shared/user-avatar.component'
+import { User } from '../shared/interfaces'
 
 @Component({
-   selector: 'direct-messages-sidebar',
+   selector: 'dm-sidebar',
    standalone: true,
    template: `
       <div class="fixed z-10 flex h-12 w-60 items-center justify-center bg-zinc-850 p-2 shadow">
@@ -18,7 +18,7 @@ import { User } from '../shared/interfaces';
       <div class="mt-12 flex flex-col gap-px p-2">
          <button
             routerLinkActive="bg-text-200 bg-zinc-600 text-zinc-200"
-            [routerLinkActiveOptions]="{exact: true}"
+            [routerLinkActiveOptions]="{ exact: true }"
             class="flex h-11 content-center items-center gap-4 rounded-md p-5 hover:bg-zinc-700 hover:text-zinc-300 active:bg-zinc-600 active:text-zinc-200"
             routerLink="/channels/@me"
          >
@@ -56,7 +56,7 @@ import { User } from '../shared/interfaces';
    styles: [':host { @apply overflow-auto flex-shrink-0 w-60 scrollbar-hide relative text-zinc-400 font-medium text-base bg-zinc-850 }'],
    imports: [CommonModule, UserStatusAreaComponent, RouterModule, UserAvatarComponent],
 })
-export class DirectMessagesMainSidebarComponent {
+export class DMMainSidebarComponent {
    users: User[] = [
       { id: 't13ic8c5g93', name: 'GamerKing22', status: 'Away' },
       { id: '5p0r5cq5j0w', name: 'DarkKnight56', status: 'Do not disturb' },

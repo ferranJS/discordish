@@ -1,6 +1,6 @@
 import { Route } from '@angular/router'
-import { DirectMessagesComponent } from 'src/app/direct-messages/direct-messages.component'
-import { FriendsComponent } from '../direct-messages/friends/friends.component'
+import { DMComponent } from 'src/app/dm/dm.component'
+import { FriendsComponent } from '../dm/friends/friends.component'
 import { ServerComponent } from '../server/server.component'
 import { ChatComponent } from '../shared/chat/chat.component'
 
@@ -12,7 +12,7 @@ export const layoutRoutes: Route[] = [
    },
    {
       path: '@me',
-      loadChildren: () => directMessagesRoutes,
+      loadChildren: () => DMRoutes,
    },
    {
       path: ':serverId',
@@ -33,10 +33,10 @@ export const serverRoutes: Route[] = [
    },
 ]
 
-export const directMessagesRoutes: Route[] = [
+export const DMRoutes: Route[] = [
    {
       path: '',
-      loadComponent: () => DirectMessagesComponent,
+      loadComponent: () => DMComponent,
       loadChildren: () => [
          {
             path: '',

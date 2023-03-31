@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common'
 import { RouterModule } from '@angular/router'
 
 @Component({
-   selector: 'direct-messages-content',
+   selector: 'dm-content',
    standalone: true,
    imports: [CommonModule, RouterModule],
    template: ` <router-outlet></router-outlet> `,
    styles: [':host { @apply w-full}'],
 })
-export class DirectMessagesContentComponent {}
+export class DMContentComponent {}

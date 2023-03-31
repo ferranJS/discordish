@@ -1,8 +1,8 @@
 import { bootstrapApplication } from '@angular/platform-browser'
 import { provideRouter, Route } from '@angular/router'
 import { AppComponent } from './app/app.component'
-import { DirectMessagesComponent } from './app/direct-messages/direct-messages.component'
-import { NotFoundComponent } from './app/errors/not-found/not-found.component'
+import { DMComponent } from './app/dm/dm.component'
+import { NotFoundComponent } from './app/errors/not-found.component'
 import { LayoutComponent } from './app/layout/layout.component'
 import { ShopComponent } from './app/shop/nitro-shop.component'
 
@@ -27,7 +27,7 @@ const mainRoutes: Route[] = [
       loadChildren: () => [
          {
             path: '',
-            loadComponent: () => DirectMessagesComponent,
+            loadComponent: () => DMComponent,
             loadChildren: () => [
                {
                   path: '',
