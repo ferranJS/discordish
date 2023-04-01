@@ -66,7 +66,7 @@ export class MainSidebarComponent {
       },
       {
          id: '45902',
-         name: 'The Art Club',
+         name: 'The Art Of Super Magic Club',
       },
       {
          id: '17394',
