@@ -5,6 +5,21 @@ import { DMComponent } from './app/dm/dm.component'
 import { NotFoundComponent } from './app/errors/not-found.component'
 import { LayoutComponent } from './app/layout/layout.component'
 import { ShopComponent } from './app/shop/nitro-shop.component'
+import { layoutRoutes } from './app/layout/layout.routes';
+import { LoginRegisterContainerComponent } from './app/login-register/login-register-container.component';
+import { LoginComponent } from './app/login-register/login.component';
+import { RegisterComponent } from './app/login-register/register.component';
+
+export const loginRegisterRoutes: Route[] = [
+   {
+      path: 'login',
+      loadComponent: () => LoginComponent
+   },
+   {
+      path:'register',
+      loadComponent: () => RegisterComponent
+   }
+]
 
 const mainRoutes: Route[] = [
    {
@@ -14,12 +29,13 @@ const mainRoutes: Route[] = [
    },
    {
       path: 'channels',
-      loadComponent: () => import('./app/layout/layout.component').then((m) => m.LayoutComponent),
-      loadChildren: () => import('./app/layout/layout.routes').then((m) => m.layoutRoutes),
+      loadComponent: () => LayoutComponent,
+      loadChildren: () => layoutRoutes,
    },
    {
-      path: 'login',
-      loadComponent: () => import('./app/login/login.component').then((m) => m.LoginComponent),
+      path: '',
+      loadComponent: () => LoginRegisterContainerComponent,
+      loadChildren: () => loginRegisterRoutes,
    },
    {
       path: 'shop',
