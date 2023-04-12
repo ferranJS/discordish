@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common'
 import { MainSidebarButtonComponent } from './main-sidebar-button.component'
 import { Server } from 'src/app/shared/interfaces'
 import { RouterModule } from '@angular/router'
+import { ToolTipDirective } from 'src/app/shared/tool-tip.directive';
 @Component({
    selector: 'main-sidebar',
    standalone: true,
@@ -11,27 +12,27 @@ import { RouterModule } from '@angular/router'
       <!-- <p class="text-xs font-bold text-zinc-400">Discrod</p> -->
       <main-sidebar-button
          iconClass="fa-brands fa-discord h-7 w-7"
-         textName="Mensajes directos"
          color="blue"
          [selectable]="true"
          link="@me"
+         [toolTip]="'Mensajes directos'"
       />
       <hr class="w-8 self-center border-[1.5px] border-zinc-700" />
-      <main-sidebar-button *ngFor="let server of servers" color="blue" [server]="server" />
-      <main-sidebar-button iconClass="fa-solid fa-plus" color="green" textName="Añadir un servidor" />
+      <main-sidebar-button *ngFor="let server of servers" color="blue" [server]="server" [toolTip]="server.name" />
+      <main-sidebar-button iconClass="fa-solid fa-plus" color="green" [toolTip]="'Añadir un servidor'" />
       <main-sidebar-button
          iconClass="fa-solid fa-compass"
-         textName="Explorar servidores públicos"
          color="green"
          click=""
          [selectable]="true"
          link="explorar-servidores"
+         [toolTip]="'Explorar servidores públicos'"
       />
    `,
    // ':host::-webkit-scrollbar { display: none; } '
    //todo should be able to scroll but it hides tooltips (overflow-scroll scrollbar-hide)
    styles: [':host { @apply flex h-full flex-col flex-shrink-0 items-center gap-2 bg-zinc-800 p-3 }'],
-   imports: [CommonModule, MainSidebarButtonComponent, RouterModule],
+   imports: [CommonModule, MainSidebarButtonComponent, RouterModule, ToolTipDirective],
 })
 export class MainSidebarComponent {
    servers: Server[] = [

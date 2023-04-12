@@ -24,24 +24,17 @@ import { CommonModule } from '@angular/common'
          <p class="line-clamp-2">
             {{ text }}
          </p>
-         <ng-container [ngSwitch]="side">
-            <div
-               *ngSwitchCase="'right'"
-               class="absolute -left-3.5 top-1/2 h-0 -translate-y-1/2 border-8 border-transparent border-r-zinc-900"
-            ></div>
-            <div
-               *ngSwitchCase="'left'"
-               class="absolute -right-3.5 top-1/2 h-0 -translate-y-1/2 border-8 border-transparent border-l-zinc-900"
-            ></div>
-            <div
-               *ngSwitchCase="'top'"
-               class="absolute -bottom-3.5 left-1/2 h-0 -translate-x-1/2 border-8 border-transparent border-t-zinc-900"
-            ></div>
-            <div
-               *ngSwitchCase="'bottom'"
-               class="absolute -top-3.5 left-1/2 h-0 -translate-x-1/2 border-8 border-transparent border-b-zinc-900"
-            ></div>
-         </ng-container>
+         <div
+            class="absolute h-0 border-8 border-transparent"
+            [ngClass]="{
+               '-right-3.5 border-l-zinc-900': side == 'left',
+               '-left-3.5 border-r-zinc-900': side == 'right',
+               '-top-3.5 border-b-zinc-900': side == 'bottom',
+               '-bottom-3.5 border-t-zinc-900': side == 'top',
+               'left-1/2 -translate-x-1/2': side == 'top' || side == 'bottom',
+               'top-1/2 -translate-y-1/2': side == 'left' || side == 'right'
+            }"
+         ></div>
       </div>
    `,
    // tailwind classes applied to the tool-tip component itself

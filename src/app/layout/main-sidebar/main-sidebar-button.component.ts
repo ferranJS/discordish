@@ -31,7 +31,7 @@ import { RouterModule } from '@angular/router'
             routerLinkActive="!h-10 scale-100"
             class="absolute -left-3 h-5 w-1 scale-0 rounded-r-xl bg-white transition-all duration-200 group-hover:scale-100"
          ></div>
-         <tool-tip [text]="(textName || this.server?.name)!" />
+         <tool-tip [text]="('ASDF' || this.server?.name)!" />
       </button>
    `,
    styles: [],
@@ -40,7 +40,6 @@ import { RouterModule } from '@angular/router'
 export class MainSidebarButtonComponent {
    @Input() iconClass?: string
    @Input() server?: Server
-   @Input() textName?: string
    @Input() selectable?: boolean
    @Input() color?: 'green' | 'blue'
    @Input() link?: string
