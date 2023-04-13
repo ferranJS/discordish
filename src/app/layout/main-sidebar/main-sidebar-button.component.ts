@@ -10,7 +10,7 @@ import { RouterModule } from '@angular/router'
    selector: 'main-sidebar-button',
    standalone: true,
    template: `
-      <button class="group relative flex h-12 w-12 items-center text-sm font-medium" [routerLink]="link || server?.id">
+      <button id="main-side" class="group relative flex h-12 w-12 items-center text-sm font-medium" [routerLink]="link || server?.id">
          <div
             class="flex h-full w-full items-center justify-center rounded-3xl bg-zinc-700 bg-cover transition-all duration-200 hover:rounded-2xl active:translate-y-px"
             [ngClass]="{
@@ -24,14 +24,14 @@ import { RouterModule } from '@angular/router'
             <p *ngIf="server && !server.image" class="overflow-hidden p-px text-xs">
                {{ initialsFromName(server.name) }}
             </p>
+            <div
+               *ngIf="selectable"
+               routerLinkActive="!h-10 scale-100"
+               class="absolute -left-3 h-5 w-1 scale-0 rounded-r-xl bg-white transition-all duration-200 group-hover:scale-100"
+            ></div>
          </div>
 
-         <div
-            *ngIf="selectable"
-            routerLinkActive="!h-10 scale-100"
-            class="absolute -left-3 h-5 w-1 scale-0 rounded-r-xl bg-white transition-all duration-200 group-hover:scale-100"
-         ></div>
-         <tool-tip [text]="('ASDF' || this.server?.name)!" />
+         <tool-tip [text]="(name || this.server?.name)!" [side]="toolTipSide || ''" />
       </button>
    `,
    styles: [],
@@ -43,6 +43,9 @@ export class MainSidebarButtonComponent {
    @Input() selectable?: boolean
    @Input() color?: 'green' | 'blue'
    @Input() link?: string
+   @Input() name?: string
+   @Input() toolTipSide?: string
+
 
    ngOnInit(): void {
       this.selectable = this.selectable ?? !!this.server

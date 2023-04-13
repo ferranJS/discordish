@@ -11,14 +11,12 @@ import { CommonModule } from '@angular/common'
    changeDetection: ChangeDetectionStrategy.OnPush,
    template: `
       <div
-         class="absolute z-40 max-h-16 w-max max-w-[190px] scale-0 rounded-md bg-zinc-900 p-3 text-start transition-all duration-[0.05s] group-hover:scale-100"
+         class="absolute z-40 flex w-max max-w-[190px] items-center justify-center rounded-md bg-zinc-900 px-3 py-2 text-start leading-normal"
          [ngClass]="{
-            'right-[calc(100%+1.5rem)]': side == 'left',
-            'left-[calc(100%+1.5rem)]': side == 'right',
-            'top-[calc(100%+1.5rem)]': side == 'bottom',
-            'bottom-[calc(100%+1.5rem)]': side == 'top',
-            'left-1/2 -translate-x-1/2': side == 'top' || side == 'bottom',
-            'top-1/2 -translate-y-1/2': side == 'left' || side == 'right'
+            '-translate-x-1/2': side == 'left',
+            'translate-x-1/2': side == 'right',
+            '-translate-y-1/2': side == 'top',
+            'translate-y-1/2': side == 'bottom'
          }"
       >
          <p class="line-clamp-2">
@@ -38,7 +36,7 @@ import { CommonModule } from '@angular/common'
       </div>
    `,
    // tailwind classes applied to the tool-tip component itself
-   styles: [':host { @apply flex justify-center items-center leading-tight }'], // z-10 block ?
+   styles: [':host {@apply hidden }'], // z-10 block ?
 })
 export class ToolTipComponent {
    @Input() text: string
