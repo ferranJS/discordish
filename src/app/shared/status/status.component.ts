@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common'
    standalone: true,
    imports: [CommonModule],
    template: `
-   //TODO it looks and behaves(hover) ugly
+   <!-- //TODO it looks and behaves(hover) ugly -->
       <ng-container [ngSwitch]="status">
          <div *ngSwitchCase="'Online'" class="h-2.5 w-2.5 rounded-full bg-green-600"></div>
          <div *ngSwitchCase="'Away'" class="relative h-2.5 w-2.5 rounded-full bg-yellow-500"></div>

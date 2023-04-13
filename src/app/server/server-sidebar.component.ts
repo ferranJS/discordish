@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common'
    selector: 'server-sidebar',
    standalone: true,
    imports: [CommonModule],
-   template: ` <p>server-sidebar works!</p> `,
+   template: ` <p>No thank you!</p> `,
    styles: [],
 })
 export class ServerMainSidebarComponent {}

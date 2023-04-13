@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common'
    selector: 'server-content',
    standalone: true,
    imports: [CommonModule],
-   template: ` <p>server-content works!</p> `,
+   template: ` <p>No gracias!</p> `,
    styles: [],
 })
 export class ServerContentComponent {}

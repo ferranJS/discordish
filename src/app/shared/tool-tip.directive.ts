@@ -8,7 +8,12 @@ import { ElementRef, Input, Directive, HostListener } from '@angular/core'
 })
 export class ToolTipDirective {
    @Input() toolTipSide: string
-   gap = 24
+   @Input() toolTipGap = '24'
+   get _toolTipGap() {
+      console.log("this.toolTipGap: ", this.toolTipGap);
+      return parseInt(this.toolTipGap)
+   }
+
    constructor(private elementRef: ElementRef<HTMLElement>) {}
 
    @HostListener('mouseenter') mouseEnter() {
@@ -23,20 +28,20 @@ export class ToolTipDirective {
       const rect = this.elementRef.nativeElement.getBoundingClientRect()
       const POSIBLE_SIDES: any = {
          right: () => {
-            tooltip.style.left = rect.left + rect.width + this.gap + 'px'
+            tooltip.style.left = rect.left + rect.width + this._toolTipGap + 'px'
             tooltip.style.top = rect.top + rect.height / 2 + 'px'
          },
          left: () => {
-            tooltip.style.left = rect.left - this.gap + 'px'
+            tooltip.style.left = rect.left - this._toolTipGap + 'px'
             tooltip.style.top = rect.top + rect.height / 2 + 'px'
          },
          top: () => {
             tooltip.style.left = rect.left + rect.width / 2 + 'px'
-            tooltip.style.top = rect.top - this.gap + 'px'
+            tooltip.style.top = rect.top - this._toolTipGap + 'px'
          },
          bottom: () => {
             tooltip.style.left = rect.left + rect.width / 2 + 'px'
-            tooltip.style.top = rect.top + rect.height + this.gap + 'px'
+            tooltip.style.top = rect.top + rect.height + this._toolTipGap + 'px'
          },
       }
       POSIBLE_SIDES[this.toolTipSide]()

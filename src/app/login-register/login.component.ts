@@ -17,16 +17,16 @@ import { ToolTipDirective } from '../shared/tool-tip.directive'
             </div>
             <div class="flex flex-col gap-2">
                <div class="text-xs">
-                  <div
+                  <span
                      class="font-bold uppercase text-zinc-300"
                      [ngClass]="{
                         '!text-red-400': !emailElement.valid && form.submitted
                      }"
                   >
                      Email or Phone Number
-                  </div>
-                  <div *ngIf="emailElement.valid || !form.submitted" class="text-red-400">*</div>
-                  <div *ngIf="!emailElement.valid && form.submitted" class="italic text-red-400">- Login or password is invalid.</div>
+                  </span>
+                  <span *ngIf="emailElement.valid || !form.submitted" class="text-red-400">*</span>
+                  <span *ngIf="!emailElement.valid && form.submitted" class="italic text-red-400">- Login or password is invalid.</span>
                </div>
                <input
                   class="flex h-10 w-96 items-center rounded-sm bg-zinc-800 p-2 text-sm font-normal shadow-inner focus:outline-none"
@@ -41,16 +41,16 @@ import { ToolTipDirective } from '../shared/tool-tip.directive'
             </div>
             <div class="flex flex-col gap-2">
                <div class="text-xs">
-                  <div
+                  <span
                      class="font-bold uppercase text-zinc-300"
                      [ngClass]="{
                         '!text-red-400': !passwordElement.valid && form.submitted
                      }"
                   >
                      Password
-                  </div>
-                  <div *ngIf="passwordElement.valid || !form.submitted" class="text-red-400">*</div>
-                  <div *ngIf="!passwordElement.valid && form.submitted" class="italic text-red-400">- Login or password is invalid.</div>
+                  </span>
+                  <span *ngIf="passwordElement.valid || !form.submitted" class="text-red-400">*</span>
+                  <span *ngIf="!passwordElement.valid && form.submitted" class="italic text-red-400">- Login or password is invalid.</span>
                </div>
                <input
                   class="flex h-10 w-96 items-center rounded-sm bg-zinc-800 p-2 text-sm font-normal shadow-inner focus:outline-none"
