@@ -1,29 +1,19 @@
 import { Component } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { User, UserStatus } from '../shared/interfaces'
+import { StatusComponent } from '../shared/status/status.component'
 
 @Component({
    selector: 'user-status-area',
    standalone: true,
-   imports: [CommonModule],
    template: `
       <button class="group flex w-full items-center gap-2 rounded-md p-1 hover:bg-zinc-700 hover:text-zinc-300">
          <div #avatar class="relative aspect-square h-8 w-8 rounded-full bg-zinc-500 ">
-            <div
-               #statusContainer
+            <status
+               [status]="user.status"
                class="absolute -bottom-0.5 -right-0.5 flex aspect-square h-4 w-4 items-center justify-center rounded-full
                bg-zinc-800 group-hover:bg-zinc-700"
-               [ngSwitch]="user.status"
-            >
-               <div *ngSwitchCase="'Online'" class="h-2.5 w-2.5 rounded-full bg-green-600"></div>
-               <div *ngSwitchCase="'Away'" class="relative h-2.5 w-2.5 rounded-full bg-yellow-500"></div>
-               <div *ngSwitchCase="'Do not disturb'" class="flex h-2.5 w-2.5 items-center justify-center rounded-full bg-red-600">
-                  <div class="h-0.5 w-1.5 rounded-full bg-zinc-850 group-hover:bg-zinc-700"></div>
-               </div>
-               <div *ngSwitchCase="'Invisible'" class="flex h-2.5 w-2.5 items-center justify-center rounded-full bg-zinc-500">
-                  <div class="h-1 w-1 rounded-full bg-zinc-850 group-hover:bg-zinc-700"></div>
-               </div>
-            </div>
+            />
          </div>
          <div class="flex flex-col items-start justify-center">
             <p>UserYes!</p>
@@ -43,7 +33,8 @@ import { User, UserStatus } from '../shared/interfaces'
       </div>
    `,
    styles: [':host {@apply flex justify-between fixed gap-2 w-60 h-14 items-center p-1 shadow bottom-0 bg-zinc-800}'],
+   imports: [CommonModule, StatusComponent],
 })
 export class UserStatusAreaComponent {
-   user: User = { name: 'asdfas', status: 'Invisible', id: '2fa34as233a' }
+   user: User = { name: 'asdfas', status: 'Online', id: '2fa34as233a', aliases: [] }
 }
