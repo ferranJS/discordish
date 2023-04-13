@@ -4,6 +4,7 @@ import { MainSidebarButtonComponent } from './main-sidebar-button.component'
 import { Server } from 'src/app/shared/interfaces'
 import { RouterModule } from '@angular/router'
 import { ToolTipDirective } from 'src/app/shared/tool-tip.directive'
+
 @Component({
    selector: 'main-sidebar',
    standalone: true,
@@ -31,7 +32,6 @@ import { ToolTipDirective } from 'src/app/shared/tool-tip.directive'
       />
    `,
    // ':host::-webkit-scrollbar { display: none; } '
-   //todo should be able to scroll but it hides tooltips (overflow-scroll scrollbar-hide)
    styles: [':host { @apply flex h-full flex-shrink-0 flex-col items-center gap-2 overflow-scroll bg-zinc-800 p-3 scrollbar-hide }'],
    imports: [CommonModule, MainSidebarButtonComponent, RouterModule, ToolTipDirective],
 })

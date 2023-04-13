@@ -2,6 +2,7 @@ import { AfterViewInit, Component, ViewChild } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { FormsModule, NgForm } from '@angular/forms'
 import { ToolTipComponent } from '../shared/tool-tip.component'
+import { ToolTipDirective } from '../shared/tool-tip.directive'
 
 @Component({
    selector: 'app-login',
@@ -63,7 +64,7 @@ import { ToolTipComponent } from '../shared/tool-tip.component'
                <a href="forgot" class="text-sm text-sky-500 hover:underline">Forgot your password?</a>
             </div>
             <div class="flex flex-col gap-2">
-               <button class="group relative" [disabled]="!form.valid" type="submit">
+               <button class="group relative" [disabled]="!form.valid" type="submit" toolTipSide="right">
                   <div
                      class="flex h-11 w-96 items-center justify-center rounded-sm bg-indigo-500 font-medium transition-all group-disabled:opacity-60"
                   >
@@ -96,7 +97,7 @@ import { ToolTipComponent } from '../shared/tool-tip.component'
          }
       `,
    ],
-   imports: [CommonModule, FormsModule, ToolTipComponent],
+   imports: [CommonModule, FormsModule, ToolTipComponent, ToolTipDirective],
 })
 export class LoginComponent {
    @ViewChild('form') form: NgForm

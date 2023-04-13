@@ -46,7 +46,6 @@ export class MainSidebarButtonComponent {
    @Input() name?: string
    @Input() toolTipSide?: string
 
-
    ngOnInit(): void {
       this.selectable = this.selectable ?? !!this.server
    }

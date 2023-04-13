@@ -8,5 +8,5 @@ body {
 }
 
 .directive-tool-tip {
-   @apply text-sm flex justify-center items-center pointer-events-none absolute transition-all duration-75
+   @apply pointer-events-none absolute flex items-center justify-center text-sm transition-all duration-75;
 }

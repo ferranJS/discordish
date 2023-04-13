@@ -14,7 +14,7 @@ import { User } from './interfaces'
             bg-zinc-850 group-focus-within:bg-zinc-600 group-hover:bg-zinc-700 group-active:bg-zinc-600"
             [ngSwitch]="user.status"
          >
-            <!--//todo lo ideal sería hacer una máscara css con svg para no tener q comunicar con routerLinkActive y variables!! -->
+            <!--//TODO lo ideal sería hacer una máscara css con svg para no tener q comunicar con routerLinkActive y variables!! -->
             <div *ngSwitchCase="'Online'" class="h-2.5 w-2.5 rounded-full bg-green-600"></div>
             <div *ngSwitchCase="'Away'" class="relative h-2.5 w-2.5 rounded-full bg-yellow-500"></div>
             <div *ngSwitchCase="'Do not disturb'" class="flex h-2.5 w-2.5 items-center justify-center rounded-full bg-red-600">

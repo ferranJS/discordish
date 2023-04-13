@@ -1,8 +1,9 @@
-import { ElementRef, Input, Directive, HostListener, HostBinding } from '@angular/core'
-import { ToolTipComponent } from './tool-tip.component'
+import { ElementRef, Input, Directive, HostListener } from '@angular/core'
+
+//? In order for toolTipSide directive to work, tool-tip component must be added into the parent element with its data
 
 @Directive({
-      selector: '[toolTipSide]',
+   selector: '[toolTipSide]',
    standalone: true,
 })
 export class ToolTipDirective {
@@ -23,18 +24,18 @@ export class ToolTipDirective {
       const POSIBLE_SIDES: any = {
          right: () => {
             tooltip.style.left = rect.left + rect.width + this.gap + 'px'
-            tooltip.style.top = rect.top + rect.height/2 + 'px'
+            tooltip.style.top = rect.top + rect.height / 2 + 'px'
          },
          left: () => {
             tooltip.style.left = rect.left - this.gap + 'px'
-            tooltip.style.top = rect.top + rect.height/2 + 'px'
+            tooltip.style.top = rect.top + rect.height / 2 + 'px'
          },
          top: () => {
-            tooltip.style.left = rect.left + rect.width/2 + 'px'
+            tooltip.style.left = rect.left + rect.width / 2 + 'px'
             tooltip.style.top = rect.top - this.gap + 'px'
          },
          bottom: () => {
-            tooltip.style.left = rect.left + rect.width/2 + 'px'
+            tooltip.style.left = rect.left + rect.width / 2 + 'px'
             tooltip.style.top = rect.top + rect.height + this.gap + 'px'
          },
       }

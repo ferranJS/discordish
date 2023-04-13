@@ -1,9 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core'
 import { CommonModule } from '@angular/common'
 
-//TODO https://accesto.com/blog/how-to-create-angular-tooltip-directive/
-//todo   crear directive con parametros nombre y posición. con @HostListener
-//todo   (y @HostBinding?creo q no hace falta) q se cree el tooltip
+//? In order for tool-tip component to work, toolTipSide directive must be added to the parent element
 @Component({
    selector: 'tool-tip',
    standalone: true,

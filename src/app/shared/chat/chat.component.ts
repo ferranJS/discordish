@@ -15,19 +15,15 @@ import { User } from '../interfaces'
                <div *ngSwitchCase="'Online'" class="h-2.5 w-2.5 rounded-full bg-green-600"></div>
                <div *ngSwitchCase="'Away'" class="relative h-2.5 w-2.5 rounded-full bg-yellow-500"></div>
                <div *ngSwitchCase="'Do not disturb'" class="flex h-2.5 w-2.5 items-center justify-center rounded-full bg-red-600">
-                  <div
-                     class="h-0.5 w-1.5 rounded-full bg-zinc-850"
-                  ></div>
+                  <div class="h-0.5 w-1.5 rounded-full bg-zinc-850"></div>
                </div>
                <div *ngSwitchCase="'Invisible'" class="flex h-2.5 w-2.5 items-center justify-center rounded-full bg-zinc-500">
-                  <div
-                     class="h-1 w-1 rounded-full bg-zinc-850"
-                  ></div>
+                  <div class="h-1 w-1 rounded-full bg-zinc-850"></div>
                </div>
             </ng-container>
-            <div #separator class="h-6 w-px rounded-full bg-zinc-600 mx-1"></div>
-            <div #aliases *ngIf="'hasDiferentNameInAnyOfTheServersUrIn'" class="items-center flex gap-1.5">
-               <p class="rounded-full bg-zinc-850 px-2 font-medium text-xs">ALIAS</p>
+            <div #separator class="mx-1 h-6 w-px rounded-full bg-zinc-600"></div>
+            <div #aliases *ngIf="'hasDiferentNameInAnyOfTheServersUrIn'" class="flex items-center gap-1.5">
+               <p class="rounded-full bg-zinc-850 px-2 text-xs font-medium">ALIAS</p>
                <p class="text-sm">Terbumon</p>
                <!-- *ngFor="let alias of userNames?" & add comma -->
             </div>
