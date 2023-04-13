@@ -4,9 +4,9 @@
 @tailwind utilities;
 
 body {
-   @apply text-zinc-200;
+   @apply text-zinc-200
 }
 
 .directive-tool-tip {
-   @apply pointer-events-none absolute flex items-center justify-center text-sm transition-all duration-75;
+   @apply pointer-events-none z-40 invisible absolute flex scale-0 items-center justify-center text-sm transition-transform duration-75
 }

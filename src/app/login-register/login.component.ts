@@ -1,6 +1,7 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core'
 import { CommonModule } from '@angular/common'
+import { Component, ViewChild } from '@angular/core'
 import { FormsModule, NgForm } from '@angular/forms'
+import { Router, RouterLink } from '@angular/router'
 import { ToolTipComponent } from '../shared/tool-tip.component'
 import { ToolTipDirective } from '../shared/tool-tip.directive'
 
@@ -11,22 +12,22 @@ import { ToolTipDirective } from '../shared/tool-tip.directive'
       <div class="flex flex-row  rounded-md bg-zinc-700">
          <form (ngSubmit)="onSubmit()" class="flex flex-col items-center justify-center gap-5 p-9" #form="ngForm">
             <div class="flex flex-col items-center justify-center gap-2">
-               <label class="text-2xl font-medium">Welcome back!</label>
-               <label class="text-zinc-400">We're so excited to see you again!</label>
+               <div class="text-2xl font-medium">Welcome back!</div>
+               <div class="text-zinc-400">We're so excited to see you again!</div>
             </div>
             <div class="flex flex-col gap-2">
-               <label class="text-xs">
-                  <label
+               <div class="text-xs">
+                  <div
                      class="font-bold uppercase text-zinc-300"
                      [ngClass]="{
                         '!text-red-400': !emailElement.valid && form.submitted
                      }"
                   >
                      Email or Phone Number
-                  </label>
-                  <label *ngIf="emailElement.valid || !form.submitted" class="text-red-400">* </label>
-                  <label *ngIf="!emailElement.valid && form.submitted" class="italic text-red-400"> - Login or password is invalid. </label>
-               </label>
+                  </div>
+                  <div *ngIf="emailElement.valid || !form.submitted" class="text-red-400">*</div>
+                  <div *ngIf="!emailElement.valid && form.submitted" class="italic text-red-400">- Login or password is invalid.</div>
+               </div>
                <input
                   class="flex h-10 w-96 items-center rounded-sm bg-zinc-800 p-2 text-sm font-normal shadow-inner focus:outline-none"
                   type="email"
@@ -39,54 +40,57 @@ import { ToolTipDirective } from '../shared/tool-tip.directive'
                />
             </div>
             <div class="flex flex-col gap-2">
-               <label class="text-xs">
-                  <label
+               <div class="text-xs">
+                  <div
                      class="font-bold uppercase text-zinc-300"
                      [ngClass]="{
                         '!text-red-400': !passwordElement.valid && form.submitted
                      }"
                   >
                      Password
-                  </label>
-                  <label *ngIf="passwordElement.valid || !form.submitted" class="text-red-400">* </label>
-                  <label *ngIf="!passwordElement.valid && form.submitted" class="italic text-red-400">
-                     - Login or password is invalid.
-                  </label>
-               </label>
+                  </div>
+                  <div *ngIf="passwordElement.valid || !form.submitted" class="text-red-400">*</div>
+                  <div *ngIf="!passwordElement.valid && form.submitted" class="italic text-red-400">- Login or password is invalid.</div>
+               </div>
                <input
                   class="flex h-10 w-96 items-center rounded-sm bg-zinc-800 p-2 text-sm font-normal shadow-inner focus:outline-none"
                   type="password"
                   #passwordElement="ngModel"
                   name="password"
                   [(ngModel)]="password"
+                  password
                   required
                />
-               <a href="forgot" class="text-sm text-sky-500 hover:underline">Forgot your password?</a>
+               <a routerLink="/forgot" class="text-sm text-sky-500 hover:underline">Forgot your password?</a>
             </div>
             <div class="flex flex-col gap-2">
-               <button class="group relative" [disabled]="!form.valid" type="submit" toolTipSide="right">
-                  <div
-                     class="flex h-11 w-96 items-center justify-center rounded-sm bg-indigo-500 font-medium transition-all group-disabled:opacity-60"
+               <!-- <div class=""> -->
+               <div toolTipSide="right">
+                  <button
+                     [disabled]="!form.valid"
+                     class="flex h-11 w-96 items-center justify-center rounded-sm bg-indigo-500 font-medium transition-all disabled:opacity-60 "
+                     type="submit"
                   >
                      Log in
-                  </div>
+                  </button>
                   <tool-tip text="Please, fill out the fields" side="right" />
-               </button>
-               <label class="text-sm text-zinc-400">
+               </div>
+               <!-- </div> -->
+               <div class="text-sm text-zinc-400">
                   Need an account?
-                  <a href="forgot" class="text-sky-500 hover:underline">Register</a>
-               </label>
+                  <button routerLink="/register" class="text-sky-500 hover:underline">Register</button>
+               </div>
             </div>
          </form>
 
          <div class="flex flex-col items-center justify-center p-9">
             <div class="mb-7 aspect-square w-44 rounded-md bg-slate-100"></div>
-            <label class="mb-3 text-2xl font-medium">Log in with QR Code</label>
-            <label class="w-60 text-center text-zinc-300">
+            <div class="mb-3 text-2xl font-medium">Log in with QR Code</div>
+            <div class="w-60 text-center text-zinc-300">
                Scan this with the
-               <label class="font-medium">Discord mobile app</label>
+               <div class="font-medium">Discord mobile app</div>
                to log in instantly.
-            </label>
+            </div>
          </div>
       </div>
    `,
@@ -97,12 +101,14 @@ import { ToolTipDirective } from '../shared/tool-tip.directive'
          }
       `,
    ],
-   imports: [CommonModule, FormsModule, ToolTipComponent, ToolTipDirective],
+   imports: [CommonModule, FormsModule, ToolTipComponent, ToolTipDirective, RouterLink],
 })
 export class LoginComponent {
    @ViewChild('form') form: NgForm
    email: string
    password: string
+
+   constructor(private router: Router) {}
 
    onSubmit() {
       console.log('form: ', this.form)

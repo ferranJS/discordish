@@ -40,14 +40,13 @@ export class ToolTipDirective {
          },
       }
       POSIBLE_SIDES[this.toolTipSide]()
-      tooltip.style.visibility = 'visible'
-      tooltip.style.scale = '1'
+      tooltip.className += ' !scale-100 !visible'
+
    }
 
    @HostListener('mouseleave') mouseLeave() {
       const tooltip = <HTMLDivElement>document.querySelector('.directive-tool-tip')
-      // tooltip.style.visibility = 'hidden'
-      // tooltip.style.scale = '0'
+      // tooltip.className = ' directive-tool-tip'
       tooltip?.remove()
    }
 }

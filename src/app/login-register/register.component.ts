@@ -1,10 +1,11 @@
 import { Component } from '@angular/core'
 import { CommonModule } from '@angular/common'
+import { RouterLink } from '@angular/router';
 
 @Component({
    selector: 'app-register',
    standalone: true,
-   imports: [CommonModule],
+   imports: [CommonModule, RouterLink],
    template: `
       <form class="flex flex-col items-center justify-center gap-5 p-8">
          <div class="flex flex-col items-center justify-center gap-2">
@@ -23,7 +24,7 @@ import { CommonModule } from '@angular/common'
          <div class="flex flex-col gap-2">
             <button class="h-10 w-96 rounded-sm  bg-indigo-500 font-medium">Continue</button>
             <label class=" text-zinc-400">
-               <a href="forgot" class="text-sm text-sky-500 hover:underline">Already have an account?</a>
+               <a routerLink="/login" class="text-sm text-sky-500 hover:underline">Already have an account?</a>
             </label>
          </div>
       </form>
