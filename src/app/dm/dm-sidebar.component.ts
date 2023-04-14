@@ -1,9 +1,9 @@
-import { Component } from '@angular/core'
+import { Component, inject } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { UserStatusAreaComponent } from './user-status-area.component'
 import { RouterModule } from '@angular/router'
 import { UserAvatarComponent } from '../shared/user-avatar.component'
-import { User } from '../shared/interfaces'
+import { UsersService  } from '../shared/services/users.service'
 
 @Component({
    selector: 'dm-sidebar',
@@ -40,7 +40,7 @@ import { User } from '../shared/interfaces'
          <button
             routerLinkActive="bg-text-200 bg-zinc-600 text-zinc-200"
             class="group flex h-11 w-full items-center justify-start gap-3 rounded-md p-2 text-justify hover:bg-zinc-700 hover:text-zinc-300 active:bg-zinc-600 active:text-zinc-200"
-            *ngFor="let user of users"
+            *ngFor="let user of usersService.users"
             [routerLink]="'/channels/@me/' + user.id"
          >
             <user-avatar [user]="user" />
@@ -57,23 +57,5 @@ import { User } from '../shared/interfaces'
    imports: [CommonModule, UserStatusAreaComponent, RouterModule, UserAvatarComponent],
 })
 export class DMMainSidebarComponent {
-   users: User[] = [
-      { id: 't13ic8c5g93', name: 'GamerKing22', status: 'Away' },
-      { id: '5p0r5cq5j0w', name: 'DarkKnight56', status: 'Do not disturb' },
-      { id: '9caiv8f5r5r', name: 'FluffyBunny99butNotSoFluffyAnymore_xX', status: 'Invisible' },
-      { id: '8hnhyt10cfm', name: 'PixelMaster77', status: 'Online' },
-      { id: 'n5qxgexczqm', name: 'ShadowNinja43', status: 'Invisible' },
-      { id: 'bvdph0w7okh', name: 'SuperAmazingRainbowUnicorn88', status: 'Do not disturb' },
-      { id: 'a37h6cv3kr6', name: 'FireDragon99', status: 'Invisible' },
-      { id: 'ysmvf35wxay', name: 'IceQueen67', status: 'Online' },
-      { id: '17g0m1u0dqi', name: 'LuckyCharms27', status: 'Away' },
-      { id: 'lf80c3nns6j', name: 'NerdyNinja42', status: 'Away' },
-      { id: '56o2k2o6ap8', name: 'GalacticGamer88', status: 'Invisible' },
-      { id: 'dpl35n7sdvf', name: 'MysticalMermaid36', status: 'Invisible' },
-      { id: '38i1zrqogaz', name: 'ElectricEagle99', status: 'Away' },
-      { id: '8tvwzupc78i', name: 'SilentAssassin44', status: 'Invisible' },
-      { id: '24q4rlmkm0q', name: 'SavageSamurai21', status: 'Invisible' },
-      { id: 'uvz6aqz8whe', name: 'FrozenAndElectricPhoenixEle64', status: 'Online' },
-      { id: '5j5c5t8za13', name: 'FunkyMonkey22', status: 'Invisible' },
-   ]
+   usersService = inject(UsersService)
 }

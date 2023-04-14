@@ -43,7 +43,7 @@ export const DMRoutes: Route[] = [
             loadComponent: () => FriendsComponent,
          },
          {
-            path: ':chatId',
+            path: ':userId',
             loadComponent: () => ChatComponent,
          },
       ],
