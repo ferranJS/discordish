@@ -1,10 +1,8 @@
 import { bootstrapApplication } from '@angular/platform-browser'
 import { provideRouter, Route } from '@angular/router'
 import { AppComponent } from './app/app.component'
-import { DMComponent } from './app/dm/dm.component'
 import { NotFoundComponent } from './app/errors/not-found.component'
 import { LayoutComponent } from './app/layout/layout.component'
-import { ShopComponent } from './app/shop/nitro-shop.component'
 import { layoutRoutes } from './app/layout/layout.routes'
 import { LoginRegisterContainerComponent } from './app/login-register/login-register-container.component'
 import { LoginComponent } from './app/login-register/login.component'
@@ -36,22 +34,6 @@ const mainRoutes: Route[] = [
       path: '',
       loadComponent: () => LoginRegisterContainerComponent,
       loadChildren: () => loginRegisterRoutes,
-   },
-   {
-      path: 'shop',
-      loadComponent: () => LayoutComponent,
-      loadChildren: () => [
-         {
-            path: '',
-            loadComponent: () => DMComponent,
-            loadChildren: () => [
-               {
-                  path: '',
-                  loadComponent: () => ShopComponent,
-               },
-            ],
-         },
-      ],
    },
    {
       path: '404',

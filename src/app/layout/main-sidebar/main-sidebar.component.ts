@@ -1,9 +1,9 @@
-import { ChangeDetectionStrategy, Component, ViewChild } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { MainSidebarButtonComponent } from './main-sidebar-button.component'
-import { Server } from 'src/app/shared/interfaces'
+import { ChangeDetectionStrategy, Component } from '@angular/core'
 import { RouterModule } from '@angular/router'
+import { Server } from 'src/app/shared/interfaces'
 import { ToolTipDirective } from 'src/app/shared/tool-tip.directive'
+import { MainSidebarButtonComponent } from './main-sidebar-button.component'
 
 @Component({
    selector: 'main-sidebar',

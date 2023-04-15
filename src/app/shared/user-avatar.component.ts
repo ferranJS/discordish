@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core'
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { User } from './interfaces'
 import { StatusComponent } from './status/status.component'
@@ -7,6 +7,7 @@ import { ToolTipDirective } from './tool-tip.directive'
 
 @Component({
    selector: 'user-avatar',
+   changeDetection: ChangeDetectionStrategy.OnPush,
    standalone: true,
    template: `
       <div #avatar class="relative aspect-square h-8 w-8 rounded-full bg-zinc-500 ">

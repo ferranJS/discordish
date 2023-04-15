@@ -1,10 +1,11 @@
-import { Component } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { User, UserStatus } from '../shared/interfaces'
+import { ChangeDetectionStrategy, Component } from '@angular/core'
+import { User } from '../shared/interfaces'
 import { StatusComponent } from '../shared/status/status.component'
 
 @Component({
    selector: 'user-status-area',
+   changeDetection: ChangeDetectionStrategy.OnPush,
    standalone: true,
    template: `
       <button class="group flex w-full items-center gap-2 rounded-md p-1 hover:bg-zinc-700 hover:text-zinc-300">

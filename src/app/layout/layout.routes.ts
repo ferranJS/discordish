@@ -3,6 +3,7 @@ import { DMComponent } from 'src/app/dm/dm.component'
 import { FriendsComponent } from '../dm/friends/friends.component'
 import { ServerComponent } from '../server/server.component'
 import { ChatComponent } from '../shared/chat/chat.component'
+import { ShopComponent } from '../shop/nitro-shop.component'
 
 export const layoutRoutes: Route[] = [
    {
@@ -41,6 +42,10 @@ export const DMRoutes: Route[] = [
          {
             path: '',
             loadComponent: () => FriendsComponent,
+         },
+         {
+            path: 'shop',
+            loadComponent: () => ShopComponent,
          },
          {
             path: ':userId',

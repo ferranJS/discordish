@@ -1,10 +1,11 @@
-import { Component } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { DMMainSidebarComponent } from './dm-sidebar.component'
+import { ChangeDetectionStrategy, Component } from '@angular/core'
 import { DMContentComponent } from './dm-content.component'
+import { DMMainSidebarComponent } from './dm-sidebar.component'
 
 @Component({
    selector: 'dm',
+   changeDetection: ChangeDetectionStrategy.OnPush,
    standalone: true,
    template: `
       <dm-sidebar />

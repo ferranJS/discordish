@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common'
-import { Component, ViewChild } from '@angular/core'
+import { ChangeDetectionStrategy, Component, ViewChild } from '@angular/core'
 import { FormsModule, NgForm } from '@angular/forms'
 import { Router, RouterLink } from '@angular/router'
 import { ToolTipComponent } from '../shared/tool-tip.component'
@@ -7,6 +7,7 @@ import { ToolTipDirective } from '../shared/tool-tip.directive'
 
 @Component({
    selector: 'app-login',
+   changeDetection: ChangeDetectionStrategy.OnPush,
    standalone: true,
    template: `
       <div class="flex flex-row  rounded-md bg-zinc-700">

@@ -1,13 +1,13 @@
-import { Component, inject } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { UserStatusAreaComponent } from './user-status-area.component'
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core'
 import { RouterModule } from '@angular/router'
+import { UsersService } from '../shared/services/users.service'
 import { UserAvatarComponent } from '../shared/user-avatar.component'
-import { UsersService  } from '../shared/services/users.service'
-
+import { UserStatusAreaComponent } from './user-status-area.component'
 @Component({
    selector: 'dm-sidebar',
    standalone: true,
+   changeDetection: ChangeDetectionStrategy.OnPush,
    template: `
       <div class="fixed z-10 flex h-12 w-60 items-center justify-center bg-zinc-850 p-2 shadow">
          <button class="flex h-7 w-56 items-center rounded-sm bg-zinc-800 p-2 text-sm font-normal shadow-inner">
@@ -28,8 +28,10 @@ import { UsersService  } from '../shared/services/users.service'
          <button
             routerLinkActive="bg-text-200 bg-zinc-600 text-zinc-200"
             class="flex h-11 content-center items-center gap-4 rounded-md p-5 hover:bg-zinc-700 hover:text-zinc-300 active:bg-zinc-600 active:text-zinc-200"
-            routerLink="/shop"
+            routerLink="/channels/@me/shop"
+            #shopLinkActive="routerLinkActive"
          >
+            <!--//TODO transform this routerLink into /shop & control routerLinkActive with shopLinkActive through a store(?) -->
             <i class="fa-solid fa-truck-fast h-4 w-4 rounded-full"></i>
             Nitro
          </button>
