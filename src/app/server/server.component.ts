@@ -5,14 +5,19 @@ import { ServerContentComponent } from './server-content.component'
 import { RouterModule } from '@angular/router'
 
 @Component({
-   selector: 'app-server',
-   changeDetection: ChangeDetectionStrategy.OnPush,
-   standalone: true,
-   template: `
-      <server-sidebar />
-      <server-content />
-   `,
-   styles: [],
-   imports: [CommonModule, ServerMainSidebarComponent, ServerContentComponent, RouterModule],
+  selector: 'app-server',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  template: `
+    <server-sidebar />
+    <server-content />
+  `,
+  styles: [],
+  imports: [
+    CommonModule,
+    ServerMainSidebarComponent,
+    ServerContentComponent,
+    RouterModule
+  ]
 })
 export class ServerComponent {}

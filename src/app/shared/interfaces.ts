@@ -1,14 +1,14 @@
 export interface Server {
-   id: string
-   name: string
-   image?: string
+  id: string
+  name: string
+  image?: string
 }
 
 export interface User {
-   id: string
-   name: string
-   status: UserStatus
-   aliases: string[]
+  id: string
+  name: string
+  status: UserStatus
+  aliases: string[]
 }
 
 export type UserStatus = 'Online' | 'Away' | 'Do not disturb' | 'Invisible'

@@ -6,53 +6,53 @@ import { ChatComponent } from '../shared/chat/chat.component'
 import { ShopComponent } from '../shop/nitro-shop.component'
 
 export const layoutRoutes: Route[] = [
-   {
-      path: '',
-      redirectTo: '@me',
-      pathMatch: 'full',
-   },
-   {
-      path: '@me',
-      loadChildren: () => DMRoutes,
-   },
-   {
-      path: ':serverId',
-      loadChildren: () => serverRoutes,
-   },
+  {
+    path: '',
+    redirectTo: '@me',
+    pathMatch: 'full'
+  },
+  {
+    path: '@me',
+    loadChildren: () => DMRoutes
+  },
+  {
+    path: ':serverId',
+    loadChildren: () => serverRoutes
+  }
 ]
 
 export const serverRoutes: Route[] = [
-   {
-      path: '',
-      loadComponent: () => ServerComponent,
-      loadChildren: () => [
-         {
-            path: ':channelId',
-            loadComponent: () => ServerComponent,
-         },
-      ],
-   },
+  {
+    path: '',
+    loadComponent: () => ServerComponent,
+    loadChildren: () => [
+      {
+        path: ':channelId',
+        loadComponent: () => ServerComponent
+      }
+    ]
+  }
 ]
 
 export const DMRoutes: Route[] = [
-   {
-      path: '',
-      loadComponent: () => DMComponent,
-      loadChildren: () => [
-         {
-            path: '',
-            loadComponent: () => FriendsComponent,
-         },
-         {
-            path: 'shop',
-            loadComponent: () => ShopComponent,
-         },
-         {
-            path: ':userId',
-            loadComponent: () => ChatComponent,
-         },
-      ],
-   },
+  {
+    path: '',
+    loadComponent: () => DMComponent,
+    loadChildren: () => [
+      {
+        path: '',
+        loadComponent: () => FriendsComponent
+      },
+      {
+        path: 'shop',
+        loadComponent: () => ShopComponent
+      },
+      {
+        path: ':userId',
+        loadComponent: () => ChatComponent
+      }
+    ]
+  }
 ]
 
 //! aproach with children does not work lol
