@@ -1,4 +1,10 @@
-import { ElementRef, Input, Directive, HostListener } from '@angular/core'
+import {
+  ElementRef,
+  Input,
+  Directive,
+  HostListener,
+  inject
+} from '@angular/core'
 
 // ? In order for toolTipSide directive to work, tool-tip component must be added into the parent element with its data
 
@@ -14,7 +20,7 @@ export class ToolTipDirective {
     return parseInt(this.toolTipGap)
   }
 
-  constructor (private readonly elementRef: ElementRef<HTMLElement>) {}
+  elementRef: ElementRef<HTMLElement> = inject(ElementRef<HTMLElement>)
 
   @HostListener('mouseenter') mouseEnter () {
     // const tooltip = <HTMLDivElement>document.querySelector('.directive-tool-tip')
