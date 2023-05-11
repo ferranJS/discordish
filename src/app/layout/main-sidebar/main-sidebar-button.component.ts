@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router'
   selector: 'main-sidebar-button',
   standalone: true,
   template: `
+    <!-- //todo by names https://tailwindcss.com/docs/hover-focus-and-other-states#differentiating-nested-groups -->
     <button
       id="main-side"
       class="group relative flex h-12 w-12 items-center text-sm font-medium"

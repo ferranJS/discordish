@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+
+// todo dark mode? https://tailwindcss.com/docs/dark-mode
 module.exports = {
   mode: 'jit',
   content: ['./src/**/*.{html,ts}'],

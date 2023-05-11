@@ -21,6 +21,7 @@ import { ToolTipDirective } from '../shared/tool-tip.directive'
           <div class="text-zinc-400">We're so excited to see you again!</div>
         </div>
         <div class="flex flex-col gap-2">
+          <!-- //todo https://tailwindcss.com/docs/hover-focus-and-other-states#styling-based-on-sibling-state -->
           <div class="text-xs">
             <span
               class="font-bold uppercase text-zinc-300"
