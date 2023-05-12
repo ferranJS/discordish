@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core'
 import { RouterModule } from '@angular/router'
+import { environment } from 'src/environments/environment'
 
 @Component({
   selector: 'app-root',
@@ -12,4 +13,7 @@ import { RouterModule } from '@angular/router'
 export class AppComponent {
   title = 'discordish'
   pepe = 'pepesito j ji'
+  ngOnInit () {
+    console.log('environment.production: ', environment.production)
+  }
 }
