@@ -7,6 +7,10 @@ import { layoutRoutes } from './app/layout/layout.routes'
 import { LoginRegisterContainerComponent } from './app/login-register/login-register-container.component'
 import { LoginComponent } from './app/login-register/login.component'
 import { RegisterComponent } from './app/login-register/register.component'
+import { importProvidersFrom } from '@angular/core'
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app'
+import { getFirestore, provideFirestore } from '@angular/fire/firestore'
+import { environment } from './environments/environment'
 
 export const loginRegisterRoutes: Route[] = [
   {
@@ -47,7 +51,13 @@ const mainRoutes: Route[] = [
 ]
 
 bootstrapApplication(AppComponent, {
-  providers: [provideRouter(mainRoutes)]
-}).catch((err) => {
+  providers: [
+    provideRouter(mainRoutes),
+    importProvidersFrom(
+      provideFirebaseApp(() => initializeApp(environment.firebaseConfig))
+    ),
+    importProvidersFrom(provideFirestore(() => getFirestore()))
+  ]
+}).catch((err: any) => {
   console.log(err)
 })
