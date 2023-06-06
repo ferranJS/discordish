@@ -4,18 +4,24 @@ module.exports = {
     es2021: true,
     node: true
   },
-  extends: ['standard-with-typescript', 'prettier'],
-  overrides: [],
+  extends: [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    'standard-with-typescript',
+    "prettier"
+  ],
+  parser: "@typescript-eslint/parser",
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['tsconfig.json']
+    project: true
   },
+  plugins: ["@typescript-eslint"],
   rules: {
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/consistent-type-imports': 'off',
-    '@typescript-eslint/no-unused-vars': 'warn',
-    'space-before-function-paren': 'warn',
-    'prefer-const': 'warn',
-  }
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/consistent-type-imports": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "space-before-function-paren": "warn",
+    "prefer-const": "warn"
+  },
+  root: true
 }
