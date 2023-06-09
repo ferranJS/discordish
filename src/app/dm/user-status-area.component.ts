@@ -1,10 +1,10 @@
-import { CommonModule } from '@angular/common'
-import { ChangeDetectionStrategy, Component } from '@angular/core'
-import { type User } from '../shared/interfaces'
-import { StatusComponent } from '../shared/status/status.component'
+import { CommonModule } from "@angular/common"
+import { ChangeDetectionStrategy, Component } from "@angular/core"
+import { type User } from "../shared/interfaces"
+import { StatusComponent } from "../shared/status/status.component"
 
 @Component({
-  selector: 'user-status-area',
+  selector: "user-status-area",
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   template: `
@@ -39,15 +39,14 @@ import { StatusComponent } from '../shared/status/status.component'
     </div>
   `,
   styles: [
-    ':host {@apply flex justify-between fixed gap-2 w-60 h-14 items-center p-1 shadow bottom-0 bg-zinc-800}'
+    ":host {@apply flex justify-between fixed gap-2 w-60 h-14 items-center p-1 shadow bottom-0 bg-zinc-800}"
   ],
   imports: [CommonModule, StatusComponent]
 })
 export class UserStatusAreaComponent {
   user: User = {
-    name: 'asdfas',
-    status: 'Online',
-    id: '2fa34as233a',
-    aliases: []
+    name: "asdfas",
+    status: "Online",
+    id: "2fa34as233a"
   }
 }

@@ -1,14 +1,14 @@
-import { CommonModule } from '@angular/common'
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core'
-import { ActivatedRoute, Router } from '@angular/router'
-import { type User } from 'src/app/shared/interfaces'
-import { UsersService } from 'src/app/shared/services/users.service'
-import { StatusComponent } from 'src/app/shared/status/status.component'
-import { ToolTipComponent } from '../tool-tip.component'
-import { ToolTipDirective } from '../tool-tip.directive'
+import { CommonModule } from "@angular/common"
+import { ChangeDetectionStrategy, Component, inject } from "@angular/core"
+import { ActivatedRoute, Router } from "@angular/router"
+import { type User } from "src/app/shared/interfaces"
+import { UsersService } from "src/app/shared/services/users.service"
+import { StatusComponent } from "src/app/shared/status/status.component"
+import { ToolTipComponent } from "../tool-tip.component"
+import { ToolTipDirective } from "../tool-tip.directive"
 
 @Component({
-  selector: 'app-chat',
+  selector: "app-chat",
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   template: `
@@ -22,7 +22,7 @@ import { ToolTipDirective } from '../tool-tip.directive'
           <status [status]="user.status" />
           <tool-tip [text]="user.status" side="bottom" />
         </div>
-        <div
+        <!-- <div
           #separator
           *ngIf="user.aliases.length"
           class="mx-1 h-6 w-px rounded-full bg-zinc-600"
@@ -32,7 +32,7 @@ import { ToolTipDirective } from '../tool-tip.directive'
           *ngIf="user.aliases.length"
           class="flex items-center gap-1.5"
         >
-          <!--//TODO implement method *ngIf="'hasDiferentNameInAnyOfTheServersUrIn'" -->
+          <!--//TODO implement method *ngIf="'hasDiferentNameInAnyOfTheServersUrIn'" 
           <p class="rounded-full bg-zinc-850 px-2 text-xs font-medium">ALIAS</p>
           <p
             class="after:content-[', '] text-sm"
@@ -40,13 +40,13 @@ import { ToolTipDirective } from '../tool-tip.directive'
           >
             {{ alias }}<span *ngIf="!last">,</span>
           </p>
-          <!-- *ngFor="let alias of userNames?" & add comma -->
-        </div>
+          <!-- *ngFor="let alias of userNames?" & add comma 
+        </div> -->
       </div>
       <div>buttons</div>
     </div>
   `,
-  styles: [':host { @apply relative flex h-full w-full }'],
+  styles: [":host { @apply relative flex h-full w-full }"],
   imports: [CommonModule, StatusComponent, ToolTipDirective, ToolTipComponent]
 })
 export class ChatComponent {
@@ -58,10 +58,10 @@ export class ChatComponent {
 
   ngOnInit (): void {
     this.route.params.subscribe((params) => {
-      const user = this.usersService.getUserById(params['userId'])
+      const user = this.usersService.getUserById(params["userId"] as string)
       if (user == null) {
         // TODO show error message(!?)
-        void this.router.navigate(['/'])
+        void this.router.navigate(["/"])
         return
       }
       this.user = user
