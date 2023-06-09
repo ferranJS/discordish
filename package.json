@@ -16,6 +16,9 @@
     "lint:fix": "eslint . --fix",
     "prepare-husky": "husky install"
   },
+  "workspaces": [
+    "firebase"
+  ],
   "private": true,
   "dependencies": {
     "@angular/animations": "^16.0.1",
