@@ -24,11 +24,11 @@
   "dependencies": {},
   "devDependencies": {},
   "lint-staged": {
-    "src/**/*": [
+    "angular/src/**/*.{js,jsx,ts,tsx}": [
       "prettier --write"
     ],
-    "src/**/*.{js,jsx,ts,tsx}": [
-      "eslint --fix"
+    "firebase/functions/src/**/*.{js,jsx,ts,tsx}": [
+      "prettier --write"
     ]
   }
 }
