@@ -7,7 +7,7 @@
  * See a full list of supported triggers at https://firebase.google.com/docs/functions
  */
 
-import {onRequest} from "firebase-functions/v2/https";
+import { onRequest } from "firebase-functions/v2/https";
 import * as logger from "firebase-functions/logger";
 
 // Start writing functions
@@ -17,3 +17,10 @@ import * as logger from "firebase-functions/logger";
 //   logger.info("Hello logs!", {structuredData: true});
 //   response.send("Hello from Firebase!");
 // });
+const { onDocumentCreated } = require("firebase-functions/v2/firestore");
+
+// The Firebase Admin SDK to access Firestore.
+const { initializeApp } = require("firebase-admin/app");
+const { getFirestore } = require("firebase-admin/firestore");
+
+initializeApp();
