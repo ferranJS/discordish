@@ -1,9 +1,9 @@
 import { CommonModule } from "@angular/common"
 import { ChangeDetectionStrategy, Component, inject } from "@angular/core"
 import { ActivatedRoute, Router } from "@angular/router"
-import { type User } from "src/app/shared/interfaces"
 import { UsersService } from "src/app/shared/services/users.service"
 import { StatusComponent } from "src/app/shared/status/status.component"
+import { User } from "../../../../../shared/interfaces"
 import { ToolTipComponent } from "../tool-tip.component"
 import { ToolTipDirective } from "../tool-tip.directive"
 

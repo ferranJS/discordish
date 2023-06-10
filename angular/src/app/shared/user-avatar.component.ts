@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from "@angular/core"
 import { CommonModule } from "@angular/common"
-import { type User } from "./interfaces"
+import { type User } from "../../../../shared/interfaces"
 import { StatusComponent } from "./status/status.component"
 import { ToolTipComponent } from "./tool-tip.component"
 import { ToolTipDirective } from "./tool-tip.directive"

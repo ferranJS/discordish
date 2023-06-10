@@ -1,8 +1,8 @@
 import { CommonModule } from "@angular/common"
 import { ChangeDetectionStrategy, Component } from "@angular/core"
 import { RouterModule } from "@angular/router"
-import { type Server } from "src/app/shared/interfaces"
 import { ToolTipDirective } from "src/app/shared/tool-tip.directive"
+import { Server } from "../../../../../shared/interfaces"
 import { MainSidebarButtonComponent } from "./main-sidebar-button.component"
 
 @Component({

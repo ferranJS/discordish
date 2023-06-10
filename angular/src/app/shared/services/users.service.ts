@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core"
-import { Alias, type User } from "src/app/shared/interfaces"
+import { Alias, type User } from "../../../../../shared/interfaces"
 
 @Injectable({
   providedIn: "root"

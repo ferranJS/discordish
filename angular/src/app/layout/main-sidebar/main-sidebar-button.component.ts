@@ -1,9 +1,9 @@
 import { CommonModule } from "@angular/common"
 import { ChangeDetectionStrategy, Component, Input } from "@angular/core"
-import { type Server } from "src/app/shared/interfaces"
 import { ToolTipComponent } from "../../shared/tool-tip.component"
 
 import { RouterModule } from "@angular/router"
+import { Server } from "../../../../../shared/interfaces"
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
