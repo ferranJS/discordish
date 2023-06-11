@@ -3,5 +3,5 @@ module.exports = {
   trailingComma: 'none',
 
   plugins: [require('prettier-plugin-tailwindcss')],
-  tailwindConfig: './tailwind.config.js'
+  tailwindConfig: 'angular/tailwind.config.js'
 }

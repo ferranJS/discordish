@@ -10,11 +10,7 @@
     "serve:prod": "ng serve --c=production",
     "build:dev": "ng build --c=development",
     "build:prod": "ng build --c=production",
-    "test": "ng test",
-    "prettify": "npx prettier --write src",
-    "lint": "eslint . --max-warnings 0 --report-unused-disable-directives",
-    "lint:fix": "eslint . --fix",
-    "prepare-husky": "husky install"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {

@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
   env: {
-    es6: true,
+    ES2020: true,
     node: true,
   },
   extends: [
@@ -11,6 +11,8 @@ module.exports = {
     "plugin:import/typescript",
     "google",
     "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    'standard-with-typescript'
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -25,8 +27,11 @@ module.exports = {
     "import",
   ],
   rules: {
-    "quotes": ["error", "double"],
-    "import/no-unresolved": 0,
-    "indent": ["error", 2],
+    "import/no-unresolved": 0, //?
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/consistent-type-imports": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "space-before-function-paren": "warn",
+    "prefer-const": "warn"
   },
 };
